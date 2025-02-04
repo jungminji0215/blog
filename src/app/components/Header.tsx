@@ -5,8 +5,8 @@ import { MdOutlineDarkMode } from "react-icons/md";
 
 export default function Header() {
   return (
-    <header className="bg-gray-200">
-      <nav className="bg-red-300 max-w-screen-xl m-auto p-4 flex justify-between">
+    <header>
+      <nav className="max-w-screen-xl m-auto p-4 flex justify-between border-b border-gray-200">
         <div>
           <Link href={ROUTES.HOME}>
             <h1 className="font-bold text-3xl">{`Minji's Devlog`}</h1>

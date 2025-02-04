@@ -1,10 +1,10 @@
-import MyProfile from "./components/MyProfile";
+import Hero from "./components/Hero";
 import Posts from "./components/post/Posts";
 import RecentPost from "./components/post/RecentPost";
 export default function Home() {
   return (
     <>
-      <MyProfile />
+      <Hero />
       <RecentPost />
       {/* TODO 컴포넌트 분리 (컴포넌트명 고민중) */}
       <section className="max-w-screen-xl m-auto p-5 bg-gray-300">
