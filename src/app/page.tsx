@@ -3,7 +3,7 @@ import Posts from "./components/post/Posts";
 import RecentPost from "./components/post/RecentPost";
 export default function Home() {
   return (
-    <main className="bg-yellow-200">
+    <>
       <MyProfile />
       <RecentPost />
       {/* TODO 컴포넌트 분리 (컴포넌트명 고민중) */}
@@ -18,6 +18,6 @@ export default function Home() {
         <h3 className="text-xl font-bold my-3">전체</h3>
         <Posts />
       </section>
-    </main>
+    </>
   );
 }
