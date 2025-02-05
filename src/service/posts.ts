@@ -6,7 +6,8 @@ import matter from "gray-matter";
 /** TODO 코드 정리 */
 export const postApi = {
   async getAllPosts(): Promise<Post[]> {
-    console.log("포스트 데이터 조회");
+    console.log("========== getAllPosts ==========");
+
     const posts: Post[] = [];
 
     /**
@@ -17,47 +18,36 @@ export const postApi = {
 
     // contents 폴더의 절대 경로
     const contentsDirectory = path.join(process.cwd(), "contents");
-    // console.log("contentsDirectory :>> ", contentsDirectory);
 
     // 카테고리
     const categories = fs.readdirSync(contentsDirectory);
-    // console.log("categories :>> ", categories);
 
     categories.forEach((categoryFolder) => {
-      // console.log("categoryFolder :>> ", categoryFolder);
-
       // 카테고리 전체 경로
       const categoryPath = path.join(contentsDirectory, categoryFolder);
-      // console.log("categoryPath :>> ", categoryPath);
 
-      // 해당 카테고리 전체 경로가 디렉토리 인 경우 -> 파일을 읽는다
       if (fs.statSync(categoryPath).isDirectory()) {
-        // console.log("디렉토리가 맞아요");
+        // 카테고리 폴더 내의 게시글 폴더들
+        const postFolders = fs.readdirSync(categoryPath);
 
-        // 해당 카테고리 안의 모든 md 파일 조회
-        const fileNames = fs.readdirSync(categoryPath);
-        // console.log("fileNames :>> ", fileNames);
+        postFolders.forEach((postFolder) => {
+          const postPath = path.join(categoryPath, postFolder);
 
-        // 조회한 파일들 순회
-        fileNames.forEach((fileName) => {
-          // md 파일만
-          if (fileName.endsWith(".md")) {
-            // 해당 파일의 풀 경로
-            const filePath = path.join(categoryPath, fileName);
+          if (fs.statSync(postPath).isDirectory()) {
+            // 파일명
+            const mdFiles = fs.readdirSync(postPath).filter((file) => file.endsWith(".md"));
+            // 파일 없으면 return
+            if (mdFiles.length === 0) return;
 
-            // 해당 파일 내용
+            const mdFile = mdFiles[0];
+            const filePath = path.join(postPath, mdFile);
             const fileContent = fs.readFileSync(filePath, "utf8");
-
-            // gray matter 라이브러리로 메타데이터 추출
             const { data, content } = matter(fileContent);
 
-            // 파일명에서 확장자 제거 (예: "20250111_자바스크립트의_역사")
-            const slug = fileName.replace(/\.md$/, "");
-
             posts.push({
-              slug,
               title: data.title,
               date: data.date,
+              thumbnailImage: data.thumbnailImage,
               category: data.category || categoryFolder,
               content,
             });

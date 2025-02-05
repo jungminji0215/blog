@@ -18,7 +18,7 @@ export default function Hero() {
         <p>안녕하세요 👋🏻</p>
         <p>공부한 내용을 기록합니다 ✏️</p>
         <Link href="/">
-          <button className="text-sm mt-3 bg-yellow-500 rounded-xl py-1 px-4">저의 사이트에 놀러오세요</button>
+          <button className="text-sm mt-3 bg-yellow-500 rounded-xl py-1 px-4">About Me</button>
         </Link>
       </div>
     </section>

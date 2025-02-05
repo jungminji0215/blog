@@ -1,7 +1,11 @@
 import React from "react";
 import PostItems from "./PostItems";
+import { postApi } from "@/service/posts";
 
-export default function Posts() {
+export default async function Posts() {
+  const posts = await postApi.getAllPosts();
+  console.log("posts :>> ", posts);
+
   return (
     <section className="max-w-screen-xl m-auto p-5">
       <ul className="text-xl font-bold my-3 flex gap-5 justify-center ">
