@@ -14,8 +14,7 @@ export default function Header() {
         </div>
         <div className="flex gap-3 items-center font-bold text-2xl">
           <MdOutlineDarkMode />
-          <Link href={ROUTES.HOME}>Home</Link>
-          <Link href={ROUTES.POSTS}>Posts</Link>
+          {/* <Link href={ROUTES.HOME}>Home</Link> */}
         </div>
       </nav>
     </header>
