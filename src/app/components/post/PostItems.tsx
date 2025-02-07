@@ -8,7 +8,7 @@ type Props = {
 
 export default function PostItems({ posts }: Props) {
   return (
-    <ul className="flex gap-5">
+    <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {posts?.map((post) => {
         return (
           <li key={post.title}>

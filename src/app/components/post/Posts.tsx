@@ -1,12 +1,9 @@
 import React from "react";
 import PostItems from "./PostItems";
 import { postApi } from "@/service/posts";
-import { copyImages } from "../../../../copyImages";
 
 export default async function Posts() {
   const posts = await postApi.getAllPosts();
-
-  // const test = await copyImages();
 
   return (
     <section className="max-w-screen-xl m-auto p-5">
