@@ -6,8 +6,6 @@ import matter from "gray-matter";
 /** TODO 코드 정리 */
 export const postApi = {
   async getAllPosts(): Promise<Post[]> {
-    console.log("========== getAllPosts ==========");
-
     const posts: Post[] = [];
 
     /**
@@ -45,6 +43,7 @@ export const postApi = {
             const { data, content } = matter(fileContent);
 
             posts.push({
+              slug: postFolder,
               title: data.title,
               date: data.date,
               thumbnailImage: data.thumbnailImage,
