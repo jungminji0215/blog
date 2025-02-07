@@ -4,7 +4,6 @@ import PostItems from "./PostItems";
 
 export default async function RecentPost() {
   const posts = await postApi.getRecentPosts();
-  console.log("posts :>> ", posts);
 
   return (
     // TODO max-w-screen-xl m-auto p-5 공통으로 사용할 수 있도록
