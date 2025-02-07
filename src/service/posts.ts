@@ -58,4 +58,19 @@ export const postApi = {
     posts.sort((a, b) => (a.date < b.date ? 1 : -1));
     return posts;
   },
+
+  async getRecentPosts(): Promise<Post[]> {
+    const posts = await this.getAllPosts();
+    const today = new Date();
+    const twoWeeksAgo = new Date();
+
+    twoWeeksAgo.setDate(today.getDate() - 14);
+
+    const recentPosts = posts.filter((post) => {
+      const postDate = new Date(post.date);
+      return postDate >= twoWeeksAgo;
+    });
+
+    return recentPosts;
+  },
 };
