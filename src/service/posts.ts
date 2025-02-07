@@ -59,6 +59,12 @@ export const postApi = {
     return posts;
   },
 
+  async getCategory(): Promise<string[]> {
+    const contentsDirectory = path.join(process.cwd(), "contents");
+    const categories = fs.readdirSync(contentsDirectory);
+    return categories;
+  },
+
   async getRecentPosts(): Promise<Post[]> {
     const posts = await this.getAllPosts();
     const today = new Date();
