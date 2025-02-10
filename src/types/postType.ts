@@ -8,3 +8,10 @@ export type Post = {
   thumbnailImage: string;
   // display: boolean;
 };
+
+export type PostDetail = {
+  title: string;
+  date: string;
+  category: string;
+  content: string;
+};
