@@ -11,7 +11,8 @@ export default function PostCard({ post }: Props) {
   const imageUrl = `/images/posts/${post.category}/${post.slug}/${post.thumbnailImage}`;
 
   return (
-    <Link href={`/posts/${post.title}`}>
+    // TODO post.title -> post.path 로 변경
+    <Link href={`/posts/${post.category}/${post.title}`}>
       <article className="border border-gray-300 rounded-md flex flex-col items-center h-72 overflow-hidden shadow-md hover:scale-105">
         <div className="relative w-full h-40">
           <Image

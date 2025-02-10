@@ -1,6 +1,6 @@
 import React from "react";
 import { postApi } from "@/service/posts";
-import CategoryPosts from "./CategoryPosts";
+import CategoryPosts from "./FilteredPosts";
 
 export default async function Posts() {
   const categories = await postApi.getCategory();
