@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Post } from "@/types/postType";
+import { Post, PostDetail } from "@/types/postType";
 import matter from "gray-matter";
 
 /** TODO 코드 정리 */
@@ -78,5 +78,25 @@ export const postApi = {
     });
 
     return recentPosts;
+  },
+
+  async getPost(category: string, fileName: string): Promise<PostDetail> {
+    const filePath = path.join(
+      process.cwd(),
+      "contents",
+      category,
+      decodeURIComponent(fileName),
+      `${decodeURIComponent(fileName)}.md`
+    );
+
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const { data, content } = matter(fileContent);
+
+    return {
+      title: data.title,
+      date: data.date,
+      category: data.category,
+      content: content,
+    };
   },
 };
