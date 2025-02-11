@@ -1,3 +1,4 @@
+import MarkdownViewer from "@/app/components/MarkdownViewer";
 import { postApi } from "@/service/posts";
 
 type Props = {
@@ -11,9 +12,9 @@ export default async function PostDetailPage({ params: { category, slug } }: Pro
   const post = await postApi.getPost(category, slug);
 
   return (
-    <>
+    <article className="bg-gray-200 max-w-screen-xl m-auto p-5">
       <h1>{post.title}</h1>
-      <pre>{post.content}</pre>
-    </>
+      <MarkdownViewer content={post.content} />
+    </article>
   );
 }
