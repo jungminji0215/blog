@@ -2,13 +2,23 @@ import Giscus from "@/app/components/Giscus";
 import MarkdownViewer from "@/app/components/MarkdownViewer";
 import { postApi } from "@/service/posts";
 
+export async function generateStaticParams() {
+  const posts = await postApi.getAllPosts();
+
+  return posts.map((post) => ({
+    category: post.category,
+    slug: post.slug,
+  }));
+}
+
 export async function generateMetadata(props: {
+  /** MEMO 오류로 인해 Promise 명시 */
   params: Promise<{ category: string; slug: string }>;
 }) {
   const params = await props.params;
 
   return {
-    title: `Minji's Devlog ${decodeURIComponent(params.slug)}`,
+    title: `Minji's Devlog | ${decodeURIComponent(params.slug)}`,
     description: params.slug,
   };
 }
