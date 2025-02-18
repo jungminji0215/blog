@@ -11,7 +11,10 @@ const font = Tilt_Neon({
 
 export const metadata: Metadata = {
   title: "Minji's Devlog",
-  description: "개발자 정민지의 개발 블로그",
+  description: "정민지의 개발 블로그",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
