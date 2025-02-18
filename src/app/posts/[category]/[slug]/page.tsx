@@ -2,24 +2,22 @@ import Giscus from "@/app/components/Giscus";
 import MarkdownViewer from "@/app/components/MarkdownViewer";
 import { postApi } from "@/service/posts";
 
-type Props = {
-  params: {
-    category: string;
-    slug: string;
-  };
-};
+export async function generateMetadata(props: {
+  params: Promise<{ category: string; slug: string }>;
+}) {
+  const params = await props.params;
 
-export async function generateMetadata({ params: { slug } }: Props) {
   return {
-    title: `Minji's Devlog | ${decodeURIComponent(slug)}`,
-    description: slug,
+    title: `Minji's Devlog ${decodeURIComponent(params.slug)}`,
+    description: params.slug,
   };
 }
 
-export default async function PostDetailPage({
-  params: { category, slug },
-}: Props) {
-  const post = await postApi.getPost(category, slug);
+export default async function PostDetailPage(props: {
+  params: Promise<{ category: string; slug: string }>;
+}) {
+  const params = await props.params;
+  const post = await postApi.getPost(params.category, params.slug);
 
   return (
     <article className="overflow-hidden max-w-screen-md m-auto p-5">
