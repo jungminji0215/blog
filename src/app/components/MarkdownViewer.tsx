@@ -12,6 +12,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
       remarkPlugins={[remarkGfm]}
       components={{
         code(props) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { ref, children, className, node, ...rest } = props;
           const match = /language-(\w+)/.exec(className || "");
           return match ? (
