@@ -20,7 +20,10 @@ async function copyImages() {
         if (!fs.statSync(postPath).isDirectory()) continue;
 
         const imagesFolder = path.join(postPath, "images");
-        if (fs.existsSync(imagesFolder) && fs.statSync(imagesFolder).isDirectory()) {
+        if (
+          fs.existsSync(imagesFolder) &&
+          fs.statSync(imagesFolder).isDirectory()
+        ) {
           const dest = path.join(destDir, category, postFolder);
           await fs.ensureDir(dest);
           await fs.copy(imagesFolder, dest);

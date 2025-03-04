@@ -12,7 +12,7 @@ export default function PostCard({ post }: Props) {
 
   return (
     // TODO post.title -> post.path 로 변경
-    <Link href={`/posts/${post.category}/${post.title}`}>
+    <Link href={`/posts/${post.category}/${post.slug}`}>
       <article className="border border-gray-300 rounded-md flex flex-col items-center h-72 overflow-hidden shadow-md hover:scale-105">
         <div className="relative w-full h-40">
           <Image
@@ -24,7 +24,9 @@ export default function PostCard({ post }: Props) {
           />
         </div>
         <div className="flex justify-between items-center p-2 w-full">
-          <span className="border py-1 px-2 bg-green-300 rounded-2xl">{post.category}</span>
+          <span className="border py-1 px-2 bg-green-300 rounded-2xl">
+            {post.category}
+          </span>
           <time className="text-sm text-gray-500">{post.date}</time>
         </div>
         <div className="text-center w-full p-2 flex items-center justify-center flex-1 text-lg">
