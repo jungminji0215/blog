@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import profileImage from "../../../public/minji.jpeg";
+import profileImage from "../../public/minji.jpeg";
 import Link from "next/link";
 
 export default function Hero() {
@@ -18,7 +18,9 @@ export default function Hero() {
         <p>안녕하세요 👋🏻</p>
         <p>공부한 내용을 기록합니다 ✏️</p>
         <Link href="/">
-          <button className="text-sm mt-3 bg-yellow-500 rounded-xl py-1 px-4">About Me</button>
+          <button className="text-sm mt-3 bg-yellow-500 rounded-xl py-1 px-4">
+            About Me
+          </button>
         </Link>
       </div>
     </section>

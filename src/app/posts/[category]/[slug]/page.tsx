@@ -1,5 +1,5 @@
-import Giscus from "@/app/components/Giscus";
-import MarkdownViewer from "@/app/components/MarkdownViewer";
+import Giscus from "@/components/Giscus";
+import MarkdownViewer from "@/components/MarkdownViewer";
 import { postApi } from "@/service/posts";
 
 export async function generateStaticParams() {

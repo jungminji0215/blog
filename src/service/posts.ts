@@ -6,6 +6,7 @@ import matter from "gray-matter";
 /** TODO 코드 정리 */
 export const postApi = {
   async getAllPosts(): Promise<Post[]> {
+    console.log("========= getAllPosts ==========");
     const posts: Post[] = [];
 
     /**
@@ -33,7 +34,9 @@ export const postApi = {
 
           if (fs.statSync(postPath).isDirectory()) {
             // 파일명
-            const mdFiles = fs.readdirSync(postPath).filter((file) => file.endsWith(".md"));
+            const mdFiles = fs
+              .readdirSync(postPath)
+              .filter((file) => file.endsWith(".md"));
             // 파일 없으면 return
             if (mdFiles.length === 0) return;
 
@@ -60,6 +63,8 @@ export const postApi = {
   },
 
   async getCategory(): Promise<string[]> {
+    console.log("========= getCategory ==========");
+
     const contentsDirectory = path.join(process.cwd(), "contents");
     const categories = fs.readdirSync(contentsDirectory);
     return categories;
@@ -81,6 +86,8 @@ export const postApi = {
   },
 
   async getPost(category: string, fileName: string): Promise<PostDetail> {
+    console.log("========= getPost ==========");
+
     const filePath = path.join(
       process.cwd(),
       "contents",
