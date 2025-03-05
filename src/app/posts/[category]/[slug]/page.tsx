@@ -40,7 +40,7 @@ export default async function PostDetailPage(props: {
       <section className="py-5 px-2 mb-5">
         <MarkdownViewer content={post.content} />
       </section>
-      <footer>
+      <footer className="mt-20">
         <Giscus />
       </footer>
     </article>

@@ -15,8 +15,8 @@ export default function Categories({ categories, selected, onClick }: Props) {
         return (
           <li
             key={category}
-            className={`border py-1 px-2  rounded-2xl hover:scale-110 cursor-pointer ${
-              selected === category ? "bg-green-500" : "bg-green-200"
+            className={`py-1 px-2  rounded-full hover:scale-110 cursor-pointer ${
+              selected === category ? "bg-yellow-400" : "bg-gray-100"
             } `}
             onClick={() => onClick(category)}
           >

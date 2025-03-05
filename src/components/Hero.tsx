@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import profileImage from "../../public/minji.jpeg";
-import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -14,14 +13,14 @@ export default function Hero() {
         priority
         className="border border-gray-300 rounded-full"
       />
-      <div className="flex flex-col justify-center">
-        <p>안녕하세요 👋🏻</p>
-        <p>공부한 내용을 기록합니다 ✏️</p>
-        <Link href="/">
+      <div className="hidden md:flex md:flex-col justify-center ">
+        <p className="font-bold">안녕하세요 👋🏻</p>
+        <p className="font-bold">공부한 내용을 기록합니다 ✏️</p>
+        {/* <Link href="/">
           <button className="text-sm mt-3 bg-yellow-500 rounded-xl py-1 px-4">
             About Me
           </button>
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

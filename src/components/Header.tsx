@@ -9,7 +9,7 @@ export default function Header() {
       <nav className="max-w-screen-xl m-auto p-4 flex justify-between border-b border-gray-200">
         <div>
           <Link href={ROUTES.HOME}>
-            <h1 className="font-bold text-3xl">{`Minji's Devlog`}</h1>
+            <h1 className="text-3xl font-title">{"Minji's Devlog"}</h1>
           </Link>
         </div>
         <div className="flex gap-3 items-center font-bold text-2xl">

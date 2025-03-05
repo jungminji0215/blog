@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* title */
+  @font-face {
+    font-family: "DWImpactamin";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/DWImpactamin.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* content */
+  @font-face {
+    font-family: "GowunDodum-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
 html,
 body {
   height: 100vh;

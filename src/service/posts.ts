@@ -25,6 +25,7 @@ export const postApi = {
         posts.push({
           slug: data.path,
           title: data.title,
+          subtitle: data.subtitle,
           date: data.date,
           thumbnailImage: data.thumbnailImage,
           category: data.category,

@@ -12,8 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        title: ["DWImpactamin", "sans-serif"],
+        content: ["GowunDodum-Regular", "sans-serif"],
+        category: ["GowunDodum-Regular", "sans-serif"],
+      },
     },
   },
 
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
