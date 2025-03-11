@@ -77,6 +77,7 @@ export const postApi = {
 
     return {
       title: data.title,
+      subtitle: data.subtitle,
       date: data.date,
       category: data.category,
       content: content,

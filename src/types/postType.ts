@@ -11,6 +11,7 @@ export type Post = {
 
 export type PostDetail = {
   title: string;
+  subtitle: string;
   date: string;
   category: string;
   content: string;

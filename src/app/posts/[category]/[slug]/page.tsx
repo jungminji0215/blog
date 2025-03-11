@@ -16,10 +16,27 @@ export async function generateMetadata(props: {
   params: Promise<{ category: string; slug: string }>;
 }) {
   const params = await props.params;
+  const post = await postApi.getPost(params.category, params.slug);
+  const ogImageUrl = `/images/posts/${post.category}/${params.slug}/"thumbnail.png"`;
 
   return {
-    title: `Minji's Devlog | ${decodeURIComponent(params.slug)}`,
-    description: params.slug,
+    title: `Minji's Devlog | ${post.title}`,
+    description: post.subtitle,
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.subtitle,
+      url: `https://www.jungminji.com/posts${params.category}/${params.slug}`,
+      siteName: "Minji's Devlog",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
   };
 }
 
