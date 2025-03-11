@@ -5,9 +5,24 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Minji's Devlog",
-  description: "민지의 개발 블로그",
+  description: "웹 개발자 정민지의 기술 블로그",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    type: "website",
+    title: "Minji's Devlog",
+    description: "웹 개발자 정민지의 기술 블로그",
+    url: "https://www.jungminji.com/",
+    siteName: "Minji's Devlog",
+    images: [
+      {
+        url: "/jungminji.png",
+        width: 1200,
+        height: 630,
+        alt: "jungminji image",
+      },
+    ],
   },
 };
 
