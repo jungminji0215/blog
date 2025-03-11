@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import profileImage from "../../public/minji.jpeg";
+import profileImage from "../../public/jungminji.png";
 
 export default function Hero() {
   return (
