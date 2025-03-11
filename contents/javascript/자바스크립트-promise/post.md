@@ -4,7 +4,7 @@ subtitle: "자바스크립트 promise 중요 내용 정리"
 path: "자바스크립트-promise"
 date: "2024-01-11"
 category: "javascript"
-thumbnailImage: "minji.jpeg"
+thumbnailImage: "thumbnail.png"
 ---
 
 ## Promise 란?

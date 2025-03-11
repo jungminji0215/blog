@@ -4,7 +4,7 @@ subtitle: "자바스크립트에서 꼭 알아야하는 기초와 동작 원리"
 path: "자바스크립트-기초"
 date: "2024-01-11"
 category: "javascript"
-thumbnailImage: "minji.jpeg"
+thumbnailImage: "thumbnail.png"
 ---
 
 ## Promise 란?

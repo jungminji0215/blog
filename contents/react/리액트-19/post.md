@@ -4,7 +4,7 @@ subtitle: "리액트 19 변경 사항들"
 path: "리액트-19"
 date: "2025-02-01"
 category: "react"
-thumbnailImage: "sum.png"
+thumbnailImage: "thumbnail.png"
 ---
 
 ## h2 입니다.
