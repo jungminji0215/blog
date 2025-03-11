@@ -17,16 +17,16 @@ export async function generateMetadata(props: {
 }) {
   const params = await props.params;
   const post = await postApi.getPost(params.category, params.slug);
-  const ogImageUrl = `/images/posts/${post.category}/${params.slug}/"thumbnail.png"`;
+  const ogImageUrl = `/images/posts/${post.category}/${params.slug}/thumbnail.png`;
 
   return {
     title: `Minji's Devlog | ${post.title}`,
     description: post.subtitle,
     openGraph: {
       type: "article",
-      title: post.title,
+      title: `Minji's Devlog | ${post.title}`,
       description: post.subtitle,
-      url: `https://www.jungminji.com/posts${params.category}/${params.slug}`,
+      url: `https://www.jungminji.com/posts/${params.category}/${params.slug}`,
       siteName: "Minji's Devlog",
       images: [
         {
