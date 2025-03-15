@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { ROUTES } from "../constants/routes";
-import { MdOutlineDarkMode } from "react-icons/md";
 
 export default function Header() {
   return (
@@ -13,7 +12,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex gap-3 items-center font-bold text-2xl">
-          <MdOutlineDarkMode />
+          {/* <MdOutlineDarkMode /> */}
           {/* <Link href={ROUTES.HOME}>Home</Link> */}
         </div>
       </nav>

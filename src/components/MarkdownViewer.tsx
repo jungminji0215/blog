@@ -32,11 +32,11 @@ export default function MarkdownViewer({ content }: { content: string }) {
         },
         img: (image) => (
           <Image
-            className="w-full object-cover"
+            className="object-cover"
             src={image.src || ""}
             alt={image.alt || ""}
-            width={500}
-            height={350}
+            width={300}
+            height={300}
           />
         ),
       }}
