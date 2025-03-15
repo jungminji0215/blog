@@ -5,7 +5,6 @@ import matter from "gray-matter";
 
 export const postApi = {
   async getAllPosts(): Promise<Post[]> {
-    console.log("========= getAllPosts ==========");
     const posts: Post[] = [];
 
     const categories = fs.readdirSync("contents");
@@ -39,8 +38,6 @@ export const postApi = {
   },
 
   async getCategory(): Promise<string[]> {
-    console.log("========= getCategory ==========");
-
     const contentsDirectory = path.join(process.cwd(), "contents");
     const categories = fs.readdirSync(contentsDirectory);
     return categories;
@@ -62,8 +59,6 @@ export const postApi = {
   },
 
   async getPost(category: string, slug: string): Promise<PostDetail> {
-    console.log("========= getPost ==========");
-
     const filePath = path.join(
       // process.cwd(),
       "contents",
