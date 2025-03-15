@@ -6,6 +6,9 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Minji's Devlog",
   description: "웹 개발자 정민지의 기술 블로그",
+  verification: {
+    google: "8NjREOg8xfvS2aWwB51syCKjsf5dfjg9DljIFEiqJT8",
+  },
   icons: {
     icon: "/favicon.ico",
   },
