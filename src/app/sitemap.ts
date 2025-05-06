@@ -1,5 +1,5 @@
-import type { MetadataRoute } from "next";
-import { postApi } from "@/service/posts";
+import type { MetadataRoute } from 'next';
+import { postApi } from '@/service/posts';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await postApi.getAllPosts();
