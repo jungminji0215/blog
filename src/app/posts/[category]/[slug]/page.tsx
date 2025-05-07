@@ -2,6 +2,10 @@ import Giscus from '@/components/Giscus';
 import MarkdownViewer from '@/components/MarkdownViewer';
 import { getPost, getPosts } from '@/service/post';
 
+type Props = {
+  params: Promise<{ category: string; slug: string }>;
+};
+
 export async function generateStaticParams() {
   const posts = await getPosts();
 
@@ -11,14 +15,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ category: string; slug: string }>;
-}) {
+export async function generateMetadata(props: Props) {
   const params = await props.params;
   const post = await getPost(params.category, params.slug);
+
+  // TODO 자동 생성으로 변경
   const ogImageUrl = `/images/posts/${post.category}/${params.slug}/thumbnail.png`;
 
   return {
+    metadataBase: new URL('https://www.jungminji.com'),
     title: `Minji's Devlog | ${post.title}`,
     description: post.subtitle,
     openGraph: {
@@ -32,7 +37,7 @@ export async function generateMetadata(props: {
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: '게시글 썸네일 이미지',
         },
       ],
     },
