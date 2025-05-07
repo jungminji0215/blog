@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "copy-images": "node copyImages.ts",
-    "dev": "npm run copy-images && next dev",
-    "build": "npm run copy-images && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },

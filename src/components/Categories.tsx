@@ -1,26 +1,37 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 
 type Props = {
   categories: string[];
   selected: string;
-  onClick: (category: string) => void;
 };
 
-export default function Categories({ categories, selected, onClick }: Props) {
+export default function Categories({ categories }: Props) {
+  const param = useParams();
+  const currentCategory = param.category ? param.category[0] : 'all';
+
   return (
-    <ul className="text-xl font-bold my-3 flex gap-5 justify-center">
+    <ul className="my-3 flex justify-center gap-5 text-xl font-bold">
+      <li
+        className={`cursor-pointer rounded-full px-2 py-1 hover:scale-110 ${
+          currentCategory === 'all' ? 'bg-yellow-400' : 'bg-gray-100'
+        } `}
+      >
+        <Link href="/posts">all</Link>
+      </li>
+
       {categories?.map((category) => {
         return (
           <li
             key={category}
-            className={`py-1 px-2  rounded-full hover:scale-110 cursor-pointer ${
-              selected === category ? "bg-yellow-400" : "bg-gray-100"
+            className={`cursor-pointer rounded-full px-2 py-1 hover:scale-110 ${
+              currentCategory === category ? 'bg-yellow-400' : 'bg-gray-100'
             } `}
-            onClick={() => onClick(category)}
           >
-            {category}
+            <Link href={`/posts/${category}`}>{category}</Link>
           </li>
         );
       })}

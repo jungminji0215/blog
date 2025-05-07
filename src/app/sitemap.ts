@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next';
-import { postApi } from '@/service/posts';
+import { getPosts } from '@/service/post';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await postApi.getAllPosts();
+  const posts = await getPosts();
 
   return posts.map((post) => ({
     url: `https://www.jungminji.com/posts/${post.category}/${post.slug}`,
