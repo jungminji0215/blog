@@ -12,7 +12,7 @@ export default function Hero() {
       <figure>
         <Image
           priority={true}
-          src="/hero.png"
+          src="/hero.webp"
           alt="정민지 이미지"
           width={PROFILE_IMG_SIZE}
           height={PROFILE_IMG_SIZE}
