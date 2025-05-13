@@ -19,7 +19,7 @@ export async function generateMetadata(props: Props) {
   const params = await props.params;
   const post = await getPost(params.category, params.slug);
 
-  // TODO 자동 생성으로 변경
+  // 블로그 썸네일과 동일
   const ogImageUrl = `/images/posts/${post.category}/${params.slug}/thumbnail.png`;
 
   return {

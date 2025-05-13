@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 type Props = {
   categories: string[];
-  selected: string;
+  selected: string; // TODO 필요없음
 };
 
 export default function Categories({ categories }: Props) {
