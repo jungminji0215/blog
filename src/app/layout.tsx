@@ -6,28 +6,13 @@ import React, { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.jungminji.com'),
-  title: "Minji's Devlog",
+  title: {
+    default: "Minji's Devlog",
+    template: "%s - Minji's Devlog",
+  },
   description: '정민지의 기술 블로그',
   verification: {
     google: '8NjREOg8xfvS2aWwB51syCKjsf5dfjg9DljIFEiqJT8',
-  },
-  icons: {
-    icon: '/favicon.ico',
-  },
-  openGraph: {
-    type: 'website',
-    title: "Minji's Devlog",
-    description: '정민지의 기술 블로그',
-    url: 'https://www.jungminji.com',
-    siteName: "Minji's Devlog",
-    images: [
-      {
-        url: '/hero.png',
-        width: 1200,
-        height: 630,
-        alt: '정민지 이미지',
-      },
-    ],
   },
 };
 

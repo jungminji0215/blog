@@ -19,28 +19,10 @@ export async function generateMetadata(props: Props) {
   const params = await props.params;
   const post = await getPost(params.category, params.slug);
 
-  // 블로그 썸네일과 동일
-  const ogImageUrl = `/images/posts/${post.category}/${params.slug}/thumbnail.png`;
-
   return {
     metadataBase: new URL('https://www.jungminji.com'),
-    title: `Minji's Devlog | ${post.title}`,
+    title: `${post.title}`,
     description: post.subtitle,
-    openGraph: {
-      type: 'article',
-      title: `Minji's Devlog | ${post.title}`,
-      description: post.subtitle,
-      url: `https://www.jungminji.com/posts/${params.category}/${params.slug}`,
-      siteName: "Minji's Devlog",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: '게시글 썸네일 이미지',
-        },
-      ],
-    },
   };
 }
 
